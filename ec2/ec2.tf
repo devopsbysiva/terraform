@@ -21,7 +21,8 @@ resource "aws_security_group" "allow_ssh_terraform" {
     tags = {
         Name = "allow_ssh_tera"
   }
-
+  
+}
 #creating a ec2 instance.
     resource "aws_instance" "terraform_instance" {
   ami                     = "ami-09c813fb71547fc4f"
@@ -30,7 +31,7 @@ resource "aws_security_group" "allow_ssh_terraform" {
    tags = {
         Name = "terraform"
   }
-  
+
   }
 
-}
+
