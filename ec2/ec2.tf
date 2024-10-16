@@ -2,7 +2,7 @@ resource "aws_security_group" "allow_ssh_terraform" {
     name = "allow_ssh_t"
     description = "Terraform"
     
-    ingress {
+    ingress {   #incoming traffic.
     from_port        = 22
     to_port          = 22
     protocol         = "tcp"
@@ -10,7 +10,7 @@ resource "aws_security_group" "allow_ssh_terraform" {
     ipv6_cidr_blocks = ["::/0"]
   }
 
-    ingress {
+    egress {  #outgoing traffic
     from_port        = 0
     to_port          = 0
     protocol         = "-1"
