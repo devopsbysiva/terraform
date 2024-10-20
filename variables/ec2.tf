@@ -29,7 +29,7 @@ resource "aws_security_group" "allow_ssh_terraform" {
 
 resource "aws_instance" "Terraform"{
     ami           = var.ami
-    instance_type = "t2.micro"
+    instance_type = var.instance_type
     vpc_security_group_ids = [aws_security_group.allow_ssh_terraform.id]
     tags = {
     Name = "terraform"
