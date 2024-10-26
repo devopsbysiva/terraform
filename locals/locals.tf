@@ -1,4 +1,6 @@
 locals {
-    
-    instance_type = var.envirnoment == "mysql" ? "t3.small" : "t3.micro"
+      instance_type = [
+    for env in var.envirnoment :
+    env == "backend" ? "t8.small" : "t3.micro"
+  ]
 }

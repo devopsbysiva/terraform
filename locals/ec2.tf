@@ -1,7 +1,7 @@
 resource "aws_instance" "expense" {
     count = length(var.envirnoment)
      ami                     = "ami-09c813fb71547fc4f"
-    instance_type = var.envirnoment == "backend" ? "t8.small" : "t3.micro"
+    instance_type = local.instance_type[count.index]
     vpc_security_group_ids =[aws_security_group.allow_ssh_terraform.id]
 
     tags = {
