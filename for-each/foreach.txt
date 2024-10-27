@@ -1,0 +1,7 @@
+
+in count based loop. we use list .
+in foreach iterative  we can use map 
+
+
+In count the key word is [count.index]
+in for each it is each [ each.key]
